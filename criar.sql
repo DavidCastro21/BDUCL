@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Equipa;
 CREATE TABLE Equipa(
     id                  INTEGER PRIMARY KEY  NOT NULL,
     nome                TEXT NOT NULL,
-    país                TEXT NOT NULL,
+    pais                TEXT NOT NULL,
     montante_arrecadado INTEGER DEFAULT 17.74 CHECK(montante_arrecadado >= 17.74),
     pontos              INTEGER DEFAULT 0,
     idEstadio           INTEGER REFERENCES Estadio (id)
@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS Jogador;
 CREATE TABLE Jogador(
     id                  INTEGER PRIMARY KEY NOT NULL,
     nome                TEXT NOT NULL UNIQUE,
-    número              INTEGER NOT NULL,
+    numero              INTEGER NOT NULL,
     idEquipa            INTEGER REFERENCES Equipa (id) NOT NULL
 );
 
